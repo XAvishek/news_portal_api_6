@@ -5,6 +5,10 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = "dob", "address"
+        # fields = "__all__"
+        # extra_kwargs = {
+        #     "address": {"required": False}
+        # }
 
 class UserCreateSerializer(serializers.ModelSerializer):
     profile = ProfileSerializer()
