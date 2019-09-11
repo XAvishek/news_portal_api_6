@@ -8,9 +8,11 @@ class NewsSerializer(ModelSerializer):
         # fields =  "pk", "title", "story", "category", "created_at", "updated_at"
         fields = "__all__"
         # exclude = 
-        # extra_kwargs = {
-        #     "reporter": {"required": False}
-        # }
+        extra_kwargs = {
+            "title": {"required": False},
+            "story": {"required": False},
+            "category": {"required": False},
+        }
 
 
     def __init__(self, *args, **kwargs):
